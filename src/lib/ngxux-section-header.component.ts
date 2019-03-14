@@ -1,20 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgxuxSectionHeaderButton }               from './ngxux-section-header-button';
 
 @Component({
+
     selector: 'ngxux-section-header',
     template: `
-        <p>
-            ngxux-section-header works!
-        </p>
+
+        <div class="wrapper">
+
+            <div class="left">
+
+                {{ title }}
+
+            </div>
+
+            <div class="right">
+
+                <button *ngFor="let button of buttons"
+                        mat-raised-button
+                        [color]="button.color"
+                        [routerLink]="[button.path]"
+                        (click)="onButtonClick(button)">
+
+                    {{ button.label }}
+
+                </button>
+
+            </div>
+
+        </div>
+
     `,
-    styles: []
+    styleUrls: [ './ngxux-section-header.component.scss' ]
+
 })
-export class NgxuxSectionHeaderComponent implements OnInit {
+export class NgxuxSectionHeaderComponent {
 
-    constructor() {
-    }
+    @Input() public title: string;
+    @Input() public buttons: Array<NgxuxSectionHeaderButton>;
 
-    ngOnInit() {
+    @Output() public onClick: EventEmitter<NgxuxSectionHeaderButton> = new EventEmitter();
+
+    public onButtonClick(button: NgxuxSectionHeaderButton): void {
+
+        this.onClick.emit(button);
+
     }
 
 }

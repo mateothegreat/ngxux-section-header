@@ -1,0 +1,35 @@
+:host {
+    
+    .wrapper {
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+        .left {
+            
+            flex: 200px;
+            
+        }
+        
+        .right {
+            
+            flex: 1;
+            
+            display: flex;
+            justify-content: flex-end;
+            
+            button {
+                
+                margin-left: 10px;
+                
+            }
+            
+        }
+        
+    }
+    
+}
