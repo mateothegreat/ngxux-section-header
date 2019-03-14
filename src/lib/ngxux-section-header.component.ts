@@ -44,7 +44,7 @@ export class NgxuxSectionHeaderComponent {
 
     public _onButtonClick(button: NgxuxSectionHeaderButton): void {
 
-        this.onClick.emit(button);
+        this.onButtonClick.emit(button);
 
     }
 
