@@ -20,6 +20,7 @@ import { NgxuxSectionHeaderButton }               from './ngxux-section-header-b
                 <button *ngFor="let button of buttons"
                         mat-raised-button
                         [color]="button.color"
+                        [routerLink]="button.path ? [ button.path ] : null"
                         (click)="_onButtonClick(button)">
 
                     {{ button.label }}
