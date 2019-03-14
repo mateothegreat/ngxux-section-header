@@ -10,7 +10,8 @@ import { NgxuxSectionHeaderButton }               from './ngxux-section-header-b
 
             <div class="left">
 
-                {{ title }}
+                <div *ngIf="title" class="first">{{ title }}</div>
+                <div *ngIf="description" class="second">{{ description }}</div>
 
             </div>
 
@@ -37,6 +38,7 @@ import { NgxuxSectionHeaderButton }               from './ngxux-section-header-b
 export class NgxuxSectionHeaderComponent {
 
     @Input() public title: string;
+    @Input() public description: string;
     @Input() public buttons: Array<NgxuxSectionHeaderButton>;
 
     @Output() public onClick: EventEmitter<NgxuxSectionHeaderButton> = new EventEmitter();
