@@ -8,6 +8,14 @@ import { NgxuxSectionHeaderButton }               from './ngxux-section-header-b
 
         <div class="wrapper">
 
+            <div *ngIf="backPath"
+                 [routerLink]="[ backPath ]"
+                 class="back">
+
+                <mat-icon>arrow_back_ios</mat-icon>
+
+            </div>
+
             <div class="left">
 
                 <div *ngIf="title" class="first">{{ title }}</div>
@@ -37,6 +45,7 @@ import { NgxuxSectionHeaderButton }               from './ngxux-section-header-b
 })
 export class NgxuxSectionHeaderComponent {
 
+    @Input() public backPath: string;
     @Input() public title: string;
     @Input() public description: string;
     @Input() public buttons: Array<NgxuxSectionHeaderButton>;

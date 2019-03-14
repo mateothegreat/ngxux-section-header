@@ -9,6 +9,22 @@
         margin-top: 20px;
         margin-bottom: 20px;
         
+        .back {
+            
+            cursor: pointer;
+            
+            &:hover {
+                
+                mat-icon {
+                    
+                    color: #666;
+                    
+                }
+                
+            }
+            
+        }
+        
         .left {
             
             flex: 200px;
