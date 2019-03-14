@@ -20,7 +20,7 @@ import { NgxuxSectionHeaderButton }               from './ngxux-section-header-b
                 <button *ngFor="let button of buttons"
                         mat-raised-button
                         [color]="button.color"
-                        (click)="onButtonClick(button)">
+                        (click)="_onButtonClick(button)">
 
                     {{ button.label }}
 
@@ -40,9 +40,9 @@ export class NgxuxSectionHeaderComponent {
     @Input() public description: string;
     @Input() public buttons: Array<NgxuxSectionHeaderButton>;
 
-    @Output() public onClick: EventEmitter<NgxuxSectionHeaderButton> = new EventEmitter();
+    @Output() public onButtonClick: EventEmitter<NgxuxSectionHeaderButton> = new EventEmitter();
 
-    public onButtonClick(button: NgxuxSectionHeaderButton): void {
+    public _onButtonClick(button: NgxuxSectionHeaderButton): void {
 
         this.onClick.emit(button);
 
